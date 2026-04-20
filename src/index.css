@@ -102,6 +102,22 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bio-banner {
+    @apply relative block w-full overflow-hidden rounded-2xl border border-border bg-secondary transition-all duration-300;
+    aspect-ratio: 16 / 7;
+  }
+  .bio-banner:hover {
+    @apply border-primary;
+    box-shadow: 0 0 40px -10px hsl(var(--bio-glow) / 0.6);
+    transform: translateY(-2px);
+  }
+  .bio-radial {
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--primary) / 0.25), transparent 70%);
   }
 }
