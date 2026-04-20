@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Settings, ImageIcon } from "lucide-react";
+import { ImageIcon } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 type Profile = { display_name: string; description: string; avatar_url: string | null };
@@ -26,14 +25,6 @@ const Index = () => {
 
   return (
     <main className="relative min-h-screen bg-background bio-radial">
-      <Link
-        to="/admin"
-        aria-label="Painel administrativo"
-        className="fixed top-4 right-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card/60 text-muted-foreground backdrop-blur transition hover:text-primary hover:border-primary"
-      >
-        <Settings className="h-4 w-4" />
-      </Link>
-
       <div className="mx-auto flex w-full max-w-md flex-col items-center px-5 pb-16 pt-16">
         {/* Avatar */}
         <div className="relative mb-6">
